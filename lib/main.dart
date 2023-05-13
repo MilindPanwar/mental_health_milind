@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'ep998_english_word_learning_app/english_word_learning_app.dart';
+import 'ep978_mental_health_app/mental_health_app.dart';
 
 main() {
-  runApp(const EnglishWordLearningApp());
+  runApp(const MentalHealthApp());
 }
