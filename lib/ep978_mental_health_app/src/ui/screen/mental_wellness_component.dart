@@ -88,8 +88,9 @@ class MentalWellnessComponent extends StatelessWidget {
                       ),
                       child: const Center(
                         child: Text(
-                          "Unlock All",
-                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
+                          "Free Sessions for Galgotia Students",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 12),
                         ),
                       ),
                     ),

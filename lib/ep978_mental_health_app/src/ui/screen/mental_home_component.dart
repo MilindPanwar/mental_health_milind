@@ -1,4 +1,3 @@
-import 'package:coolicons/coolicons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -6,8 +5,46 @@ import 'package:ionicons/ionicons.dart';
 
 import '../../riverpod/bottom_tab_provider.dart';
 
-class MentalHomeComponent extends StatelessWidget {
+class MentalHomeComponent extends StatefulWidget {
   const MentalHomeComponent({Key? key}) : super(key: key);
+
+  @override
+  State<MentalHomeComponent> createState() {
+    return _MentalHomeComponentState();
+    //=> _MentalHomeComponentState();
+  }
+}
+
+class _MentalHomeComponentState extends State<MentalHomeComponent> {
+  var count = 0;
+
+  void counter() {
+    count++;
+    print(count);
+  }
+
+  var ans = "--------";
+
+  void clickF(var s) {
+    setState(() {
+      ans = s;
+    });
+  }
+
+  // void calculating(){
+  //   int res=count;
+  //   if(res<2){
+  //     clickF();
+  //   }else if(res==2 && res==3){
+  //     clickF();
+  //   }else if(res==4 && res==5){
+  //
+  //   }else if(res==6 && res<=7){
+  //
+  //   }else if(res>7){
+  //
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +56,7 @@ class MentalHomeComponent extends StatelessWidget {
           child: Row(
             children: [
               Text(
-                "My Spaces",
+                "Milind & Sachidanand",
                 style: GoogleFonts.balsamiqSans(
                   fontWeight: FontWeight.bold,
                   color: Colors.grey,
@@ -39,71 +76,27 @@ class MentalHomeComponent extends StatelessWidget {
                   vertical: 4,
                 ),
                 child: Text(
-                  "SOS",
+                  "Galgotias University",
                   style: GoogleFonts.balsamiqSans(
                     fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(Coolicons.settings_future),
-              ),
             ],
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Row(
-            children: [
-              Container(
-                height: 48,
-                width: 48,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  border: Border.all(color: Colors.black, width: 1.5),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Hello Dreamwalker",
-                      style: GoogleFonts.balsamiqSans(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    Text(
-                      "Let's explore all the features here",
-                      style: GoogleFonts.balsamiqSans(
-                        color: Colors.grey,
-                        fontSize: 12,
-                      ),
-                    )
-                  ],
-                ),
-              )
-            ],
-          ),
-        ),
+
         const SizedBox(
           height: 8,
         ),
         Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Use Voice in Menta",
+                "Are you mentally fit?",
                 style: GoogleFonts.balsamiqSans(
-                  fontSize: 14,
+                  fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -125,15 +118,17 @@ class MentalHomeComponent extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "New Features",
-                          style: GoogleFonts.balsamiqSans(fontWeight: FontWeight.bold),
+                          "Check Your Mental Health Here",
+                          style: GoogleFonts.balsamiqSans(
+                              fontWeight: FontWeight.bold, fontSize: 20),
                         ),
                         const SizedBox(
                           height: 8,
                         ),
                         Text(
-                          "Talk through your anxiety",
-                          style: GoogleFonts.balsamiqSans(fontWeight: FontWeight.w300),
+                          "Tap on the SYMPTOMS given below",
+                          style: GoogleFonts.balsamiqSans(
+                              fontWeight: FontWeight.w300),
                         ),
                       ],
                     ),
@@ -141,22 +136,6 @@ class MentalHomeComponent extends StatelessWidget {
                     Container(
                       height: 48,
                       width: 48,
-                      decoration: const BoxDecoration(
-                        color: Colors.white,
-                        shape: BoxShape.circle,
-                      ),
-                      padding: const EdgeInsets.all(4),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                            color: Colors.black,
-                          ),
-                        ),
-                        child: const Center(
-                          child: Icon(Icons.mic),
-                        ),
-                      ),
                     )
                   ],
                 ),
@@ -168,82 +147,114 @@ class MentalHomeComponent extends StatelessWidget {
           padding: const EdgeInsets.symmetric(
             horizontal: 16,
           ),
-          child: Row(
-            children: [
-              const Text("Self Care"),
-              const Spacer(),
-              Column(
-                children: [
-                  const Text("See All"),
-                  const SizedBox(
-                    height: 4,
-                  ),
-                  Container(
-                    height: 2,
-                    width: 42,
-                    decoration: const BoxDecoration(
-                      color: Colors.blue,
-                    ),
-                  )
-                ],
-              )
-            ],
-          ),
         ),
-        const SizedBox(
-          height: 16,
-        ),
+
+        //yaha pe neeche khaali space hai bohat sara
         Padding(
           padding: const EdgeInsets.only(left: 16),
           child: SizedBox(
-            height: 100,
-            child: ListView.builder(
-              itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.only(right: 12),
-                  child: Column(
-                    children: [
-                      Container(
-                        height: 54,
-                        width: 54,
-                        decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            border: Border.all(
-                              color: Colors.black,
-                            )),
-                        padding: const EdgeInsets.all(2),
-                        child: Container(
-                          decoration: const BoxDecoration(
-                            color: Colors.blue,
-                            shape: BoxShape.circle,
-                          ),
-                        ),
+            height: 200,
+            child: Row(
+              children: [
+                Padding(padding: const EdgeInsets.only(left: 20)),
+                Column(
+                  children: [
+                    Padding(padding: const EdgeInsets.only(top: 10)),
+                    SizedBox(
+                      height: 50,
+                      width: 100,
+                      child: ElevatedButton(
+                        child: Text("Worried"),
+                        onPressed: counter,
                       ),
-                      const SizedBox(
-                        height: 12,
+                    ),
+                    Padding(padding: const EdgeInsets.only(top: 10)),
+                    SizedBox(
+                      height: 50,
+                      width: 100,
+                      child: ElevatedButton(
+                        child: Text("Headache"),
+                        onPressed: counter,
                       ),
-                      Text(
-                        "Talk",
-                        style: GoogleFonts.balsamiqSans(
-                          fontWeight: FontWeight.w300,
-                          color: Colors.grey,
-                        ),
-                      )
-                    ],
-                  ),
-                );
-              },
-              itemCount: 10,
-              scrollDirection: Axis.horizontal,
+                    ),
+                    Padding(padding: const EdgeInsets.only(top: 10)),
+                    SizedBox(
+                      height: 50,
+                      width: 100,
+                      child: ElevatedButton(
+                          child: Text("Anxiety"), onPressed: counter),
+                    ),
+                  ],
+                ),
+                Padding(padding: const EdgeInsets.only(left: 20)),
+                Column(
+                  children: [
+                    Padding(padding: const EdgeInsets.only(top: 10)),
+                    SizedBox(
+                      height: 50,
+                      width: 100,
+                      child: ElevatedButton(
+                        child: Text("Fear"),
+                        onPressed: counter,
+                      ),
+                    ),
+                    Padding(padding: const EdgeInsets.only(top: 10)),
+                    SizedBox(
+                      height: 50,
+                      width: 100,
+                      child: ElevatedButton(
+                        child: Text("Lowmood"),
+                        onPressed: counter,
+                      ),
+                    ),
+                    Padding(padding: const EdgeInsets.only(top: 10)),
+                    SizedBox(
+                      height: 50,
+                      width: 100,
+                      child: ElevatedButton(
+                          child: Text("Insomnia"), onPressed: counter),
+                    ),
+                  ],
+                ),
+                Padding(padding: const EdgeInsets.only(left: 20)),
+                Column(
+                  children: [
+                    Padding(padding: const EdgeInsets.only(top: 10)),
+                    SizedBox(
+                      height: 50,
+                      width: 100,
+                      child: ElevatedButton(
+                        child: Text("Sweating"),
+                        onPressed: counter,
+                      ),
+                    ),
+                    Padding(padding: const EdgeInsets.only(top: 10)),
+                    SizedBox(
+                      height: 50,
+                      width: 100,
+                      child: ElevatedButton(
+                        child: Text("High BP"),
+                        onPressed: counter,
+                      ),
+                    ),
+                    Padding(padding: const EdgeInsets.only(top: 10)),
+                    SizedBox(
+                      height: 50,
+                      width: 100,
+                      child: ElevatedButton(
+                          child: Text("Memeory Issue"), onPressed: counter),
+                    ),
+                  ],
+                ),
+              ],
             ),
           ),
         ),
+
         Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 16,
-          ),
+          padding: const EdgeInsets.only(top: 15),
           child: Text(
-            "My 4 Am Friends",
+            "-----| Click GENERATE for the test Report",
             style: GoogleFonts.balsamiqSans(
               fontWeight: FontWeight.bold,
             ),
@@ -252,7 +263,7 @@ class MentalHomeComponent extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(16.0),
           child: Container(
-            height: 110,
+            height: 130,
             decoration: BoxDecoration(
               border: Border.all(
                 color: Colors.black,
@@ -263,50 +274,59 @@ class MentalHomeComponent extends StatelessWidget {
             padding: const EdgeInsets.all(16),
             child: Row(
               children: [
-                Container(
-                  height: 84,
-                  width: 84,
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                      image: NetworkImage(
-                        "https://cdn.pixabay.com/photo/2020/11/23/18/18/birds-5770589_960_720.jpg",
-                      ),
-                      fit: BoxFit.fitHeight,
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  width: 16,
-                ),
+                Padding(padding: const EdgeInsets.only(left: 70)),
                 Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const Text(
-                      "How are you feeling?",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
                     Container(
+                      height: 38,
                       decoration: BoxDecoration(
-                        color: Colors.yellow,
+                        color: Colors.yellowAccent,
                         border: Border.all(
                           color: Colors.black,
                           width: 1.5,
                         ),
-                        borderRadius: BorderRadius.circular(24),
+                        borderRadius: BorderRadius.circular(6),
                       ),
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 12,
-                        vertical: 4,
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 20,
+                        vertical: 0.1,
                       ),
-                      child: const Center(
-                        child: Text(
-                          "Talk Now",
-                        ),
+                      child: TextButton(
+                        child: Text("GENERATE REPORT"),
+                        onPressed: () {
+                          int res = count;
+                          var str = "";
+                          if (res < 2) {
+                            str = "10% \n You Just Need Break.";
+                          } else if (res == 2 || res == 3) {
+                            str = "30% \n Take Rest for 2 Days.";
+                          } else if (res == 4 || res == 5) {
+                            str = "40% \n Go On a Vacation.";
+                          } else if (res == 6 || res <= 7) {
+                            str = "60% \n Strict Rest Needed";
+                          } else if (res == 8) {
+                            str = "80% \n Consult Doctor";
+                          } else if (res > 8) {
+                            str = "99% \n Severe Condition!!";
+                          }
+                          clickF(str);
+                          print(ans);
+                        },
+                        style:
+                            TextButton.styleFrom(fixedSize: Size.fromHeight(2)),
                       ),
-                    )
+                    ),
+                    Padding(padding: EdgeInsets.only(top: 10)),
+                    Text(
+                      ans,
+                      style: GoogleFonts.balsamiqSans(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
                   ],
                 )
               ],
@@ -334,11 +354,39 @@ class MentalHomeComponent extends StatelessWidget {
                   children: [
                     index == 0
                         ? GestureDetector(
-                            onTap: () {
-                              ref.read(mhBottomTabProvider.notifier).state = 0;
-                            },
-                            child: Container(
-                              decoration: BoxDecoration(
+                      onTap: () {
+                        ref.read(mhBottomTabProvider.notifier).state = 0;
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.yellow,
+                          borderRadius: BorderRadius.circular(16),
+                          border: Border.all(
+                            color: Colors.black,
+                            width: 1.5,
+                          ),
+                        ),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 12,
+                          vertical: 4,
+                        ),
+                        child: const Icon(Ionicons.home),
+                      ),
+                    )
+                        : IconButton(
+                            onPressed: () => ref
+                                .read(mhBottomTabProvider.notifier)
+                                .state = 0,
+                            icon: const Icon(Ionicons.home),
+                            color: Colors.white,
+                          ),
+                    index == 1
+                        ? GestureDetector(
+                      onTap: () {
+                        ref.read(mhBottomTabProvider.notifier).state = 0;
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
                                 color: Colors.yellow,
                                 borderRadius: BorderRadius.circular(16),
                                 border: Border.all(
@@ -350,68 +398,69 @@ class MentalHomeComponent extends StatelessWidget {
                                 horizontal: 12,
                                 vertical: 4,
                               ),
-                              child: const Icon(Ionicons.home),
-                            ),
-                          )
-                        : IconButton(
-                            onPressed: () => ref.read(mhBottomTabProvider.notifier).state = 0,
-                            icon: const Icon(Ionicons.home),
-                            color: Colors.white,
-                          ),
-                    index == 1
-                        ? GestureDetector(
-                            onTap: () {
-                              ref.read(mhBottomTabProvider.notifier).state = 0;
-                            },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.yellow,
-                                  borderRadius: BorderRadius.circular(16),
-                                  border: Border.all(color: Colors.black, width: 1.5,),),
-                              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4,),
                               child: const Icon(Ionicons.chatbubble_outline),
                             ),
-                          )
+                    )
                         : IconButton(
-                            onPressed: () => ref.read(mhBottomTabProvider.notifier).state = 1,
+                            onPressed: () => ref
+                                .read(mhBottomTabProvider.notifier)
+                                .state = 1,
                             icon: const Icon(Ionicons.chatbubble_outline),
                             color: Colors.white,
                           ),
                     index == 2
                         ? GestureDetector(
-                            onTap: () {
-                              ref.read(mhBottomTabProvider.notifier).state = 0;
-                            },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.yellow,
-                                  borderRadius: BorderRadius.circular(16),
-                                  border: Border.all(color: Colors.black, width: 1.5,),),
-                              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4,),
+                      onTap: () {
+                        ref.read(mhBottomTabProvider.notifier).state = 0;
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                                color: Colors.yellow,
+                                borderRadius: BorderRadius.circular(16),
+                                border: Border.all(
+                                  color: Colors.black,
+                                  width: 1.5,
+                                ),
+                              ),
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 12,
+                                vertical: 4,
+                              ),
                               child: const Icon(Ionicons.apps_outline),
                             ),
-                          )
+                    )
                         : IconButton(
-                            onPressed: () => ref.read(mhBottomTabProvider.notifier).state = 2,
+                            onPressed: () => ref
+                                .read(mhBottomTabProvider.notifier)
+                                .state = 2,
                             icon: const Icon(Ionicons.apps_outline),
                             color: Colors.white,
                           ),
                     index == 3
                         ? GestureDetector(
-                            onTap: () {
-                              ref.read(mhBottomTabProvider.notifier).state = 0;
-                            },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.yellow,
-                                  borderRadius: BorderRadius.circular(16),
-                                  border: Border.all(color: Colors.black, width: 1.5,),),
-                              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4,),
+                      onTap: () {
+                        ref.read(mhBottomTabProvider.notifier).state = 0;
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                                color: Colors.yellow,
+                                borderRadius: BorderRadius.circular(16),
+                                border: Border.all(
+                                  color: Colors.black,
+                                  width: 1.5,
+                                ),
+                              ),
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 12,
+                                vertical: 4,
+                              ),
                               child: const Icon(Ionicons.document_text_outline),
                             ),
-                          )
+                    )
                         : IconButton(
-                            onPressed: () => ref.read(mhBottomTabProvider.notifier).state = 3,
+                            onPressed: () => ref
+                                .read(mhBottomTabProvider.notifier)
+                                .state = 3,
                             icon: const Icon(Ionicons.document_text_outline),
                             color: Colors.white,
                           )
